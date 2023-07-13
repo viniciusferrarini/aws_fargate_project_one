@@ -20,4 +20,11 @@ public class TestController {
         return ResponseEntity.ok("Name: " + name);
     }
 
+    @GetMapping("/sum/{valueOne}/{valueTwo}")
+    public ResponseEntity<?> sum(@PathVariable Double valueOne, @PathVariable Double valueTwo) {
+        LOG.info("Adding values: {} + {}", valueOne, valueTwo);
+        return ResponseEntity.ok("Result: " + (valueOne + valueTwo));
+    }
+
+
 }
